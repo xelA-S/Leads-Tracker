@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border:5px solid darkslateblue
+}
+
+input{
+    width: 100%;
+    border: solid 2px darkslateblue;
+    padding: 10px;
+    
+    border-radius: 3px;
+    font-weight: bold;
+    box-sizing: border-box;
+    
+}
+
+button{
+    background-color: darkslateblue;
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+    margin-top: 5px;
+
+}
