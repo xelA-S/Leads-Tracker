@@ -1,15 +1,22 @@
 const inputElement=document.getElementById("input");
 const saveElement=document.getElementById("save");
 const listElement=document.getElementById("list");
-let Leads=[]
+let Links=[]
+let listItems=""
 
 
 
 
 saveElement.addEventListener("click",function(){
-    Leads.push(inputElement.value);
-    for(let i=0; i < Leads.length; i++){
-        listElement.innerHTML+="<li>" + Leads[i] + "</li>";
-    }
-    
+    Links.push(inputElement.value);
+    renderLinks()
 })
+
+
+
+function renderLinks(){
+    for(let i=0; i < Links.length; i++){
+        listItems+="<li>" + Links[i] + "</li>";
+    }
+    listElement.innerHTML=listItems
+}
