@@ -1,7 +1,11 @@
-let inputElement=document.getElementById("input")
-let saveElement=document.getElementById("save")
+const inputElement=document.getElementById("input");
+const saveElement=document.getElementById("save");
+let Leads=[]
 
-function save(){
-    console.log("Button clicked!")
-}
 
+
+saveElement.addEventListener("click",function(){
+    Leads.push(inputElement.value)
+})
+
+ 
