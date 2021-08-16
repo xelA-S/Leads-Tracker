@@ -2,21 +2,27 @@ const inputElement=document.getElementById("input");
 const saveElement=document.getElementById("save");
 const listElement=document.getElementById("list");
 let Links=[]
-let listItems=""
+
 
 
 
 
 saveElement.addEventListener("click",function(){
     Links.push(inputElement.value);
+    inputElement.value=""
     renderLinks()
 })
 
 
 
 function renderLinks(){
+    let listItems=""
     for(let i=0; i < Links.length; i++){
-        listItems+="<li>" + Links[i] + "</li>";
+        listItems+=`<li>
+                        <a target="_blank" href="https://${Links[i]}">
+                             ${Links[i]}
+                        </a>
+                    </li>`;
     }
     listElement.innerHTML=listItems
 }

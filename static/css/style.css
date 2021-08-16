@@ -27,3 +27,19 @@ button{
     
 
 }
+
+ul{
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+li{
+    margin-top: 10px;
+    color: darkslateblue;
+    font-weight: bold;
+}
+
+li a{    
+    color: darkslateblue;
+}
