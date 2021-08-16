@@ -5,14 +5,19 @@ let Links=[]
 
 
 
-
-
 saveElement.addEventListener("click",function(){
     Links.push(inputElement.value);
     inputElement.value=""
     renderLinks()
 })
 
+inputElement.addEventListener("keypress",function(e){
+    if(e.key === "Enter"){
+        Links.push(inputElement.value);
+        inputElement.value=""
+        renderLinks()
+    }
+})
 
 
 function renderLinks(){
