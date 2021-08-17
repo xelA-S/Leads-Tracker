@@ -2,12 +2,16 @@ const inputElement=document.getElementById("input");
 const saveElement=document.getElementById("save");
 const listElement=document.getElementById("list");
 let Links=[]
+let linksFromLocalStorage=JSON.parse(localstorage.getItem("links"))
 
-
-
+if(linksFromLocalStorage){
+    Links=linksFromLocalStorage
+    renderLinks()
+}
 
 saveElement.addEventListener("click",function(){
     Links.push(inputElement.value);
+    localStorage.setItem("links",JSON.stringify(Links))
     inputElement.value=""
     renderLinks()
 })
@@ -15,6 +19,7 @@ saveElement.addEventListener("click",function(){
 inputElement.addEventListener("keypress",function(e){
     if(e.key === "Enter"){
         Links.push(inputElement.value);
+        localStorage.setItem("links",JSON.stringify(Links))
         inputElement.value=""
         renderLinks()
     }
