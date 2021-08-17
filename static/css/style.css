@@ -2,7 +2,8 @@ body{
     margin: 0;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    border:5px solid darkslateblue
+    border:5px solid darkslateblue;
+    min-width: 400px
 }
 
 input{

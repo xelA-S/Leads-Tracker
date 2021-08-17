@@ -5,6 +5,7 @@ let Links=[]
 
 
 
+
 saveElement.addEventListener("click",function(){
     Links.push(inputElement.value);
     inputElement.value=""
@@ -23,11 +24,12 @@ inputElement.addEventListener("keypress",function(e){
 function renderLinks(){
     let listItems=""
     for(let i=0; i < Links.length; i++){
-        listItems+=`<li>
-                        <a target="_blank" href="https://${Links[i]}">
-                             ${Links[i]}
-                        </a>
-                    </li>`;
+        listItems+=`
+        <li>
+            <a target="_blank" href="https://${Links[i]}">
+                ${Links[i]}
+            </a>
+         </li>`;
     }
     listElement.innerHTML=listItems
 }
