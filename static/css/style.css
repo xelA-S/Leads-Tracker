@@ -22,11 +22,17 @@ button{
     color: whitesmoke;
     padding: 10px;
     border-radius: 3px;
-    border: none;
+    border: 1px solid darkslateblue;
     font-weight: bold;
     margin-top: 5px;
     
 
+}
+
+#delete{
+    color: darkslateblue;
+    background-color: whitesmoke;
+    
 }
 
 ul{
