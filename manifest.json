@@ -5,7 +5,10 @@
     "action": {
         "default_popup": "templates/tracker.html",
         "default_icon": "link.png"
-    }
+    },
+    "permissions": [
+        "tabs"
+    ]
     
 
 }

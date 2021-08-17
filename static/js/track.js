@@ -1,13 +1,15 @@
-let Links=["test.com"]
+let Links=[]
 const inputElement=document.getElementById("input");
 const saveElement=document.getElementById("save");
 const listElement=document.getElementById("list");
 const DeleteElement=document.getElementById("delete");
+const saveTabElement=document.getElementById("saveTab")
 let linksFromLocalStorage = JSON.parse( localStorage.getItem("links") )
+
 
 if(linksFromLocalStorage){
     Links=linksFromLocalStorage
-    renderLinks()
+    renderLinks(Links)
 }
 
 
@@ -18,7 +20,7 @@ saveElement.addEventListener("click",function(){
     Links.push(inputElement.value);
     localStorage.setItem("links", JSON.stringify(Links))
     inputElement.value=""
-    renderLinks()
+    renderLinks(Links)
 })
 
 inputElement.addEventListener("keypress",function(e){
@@ -26,25 +28,36 @@ inputElement.addEventListener("keypress",function(e){
         Links.push(inputElement.value);
         localStorage.setItem("links",JSON.stringify(Links))
         inputElement.value=""
-        renderLinks()
+        renderLinks(Links)
     }
+})
+
+
+saveTabElement.addEventListener("click",function(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        Links.push(tabs[0].url)
+        localStorage.setItem("links", JSON.stringify(Links) )
+        renderLinks(Links)
+   
+    })
+
 })
 
 DeleteElement.addEventListener("dblclick",function( ){
     localStorage.clear()
     Links=[]
-    renderLinks()
+    renderLinks(Links)
 
 })
 
 
-function renderLinks(){
+function renderLinks(someLinks){
     let listItems=""
-    for(let i=0; i < Links.length; i++){
+    for(let i=0; i < someLinks.length; i++){
         listItems+=`
         <li>
-            <a target="_blank" href="https://${Links[i]}">
-                ${Links[i]}
+            <a target="_blank" href="https://${someLinks[i]}">
+                ${someLinks[i]}
             </a>
          </li>`;
     }
